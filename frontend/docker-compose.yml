@@ -1,0 +1,27 @@
+
+version: '3.0'
+
+services:
+  dev_portfolio_frontend:
+    container_name: portfolioDevFrontend
+    build: .
+    ports:
+      - "8005:8005"
+    command: ["npx", "next", "dev", "-p", "8005"]
+    volumes:
+      - .:/home/app/fontend
+      - /home/app/frontend/node_modules
+
+  lint_portfolio_frontend:
+    container_name: portfolioLintFrontend
+    depends_on:
+      - dev_portfolio_frontend
+    build: 
+      context: .
+      dockerfile: Dockerfile.lint
+    command: ["npx", "next", "lint"]
+    volumes:
+      - .:/home/app/fontend
+      - /home/app/frontend/node_modules
+
+  
