@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Tanguy&apos;s World</title>
+        <title>Tanguy&apos;s World !</title>
         <meta name="description" content="Generated with love by create next app" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/portfolio_logo.ico" />
